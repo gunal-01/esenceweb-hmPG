@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EsenceWeb</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/font.css">
+
+    <!-- TODO: MODULE_LAYOUT -->
+    <!-- 1. Create a <link> to the first stylesheet needed for Bootstrap -->
+
+</head>
+
+<body>
+
+    <!-- TODO: MODULE_LAYOUT -->
+    <!-- 1. Use appropriate css classes on nav element. -->
+    <!-- 2. Add child elements as required. -->
+
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid">
+            <div class="message" id="randomMessage"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar"> <span class="navbar-toggler-icon"></span> </button>
+            <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item"> <a class="nav-link active" href="#">Sell your products</a> </li>
+                    <li class="nav-item dropdown">
+                        <li class="nav-item"> <select class="form-select" id="languageSelect" aria-label="Language select"
+                                onchange="showSelectedLanguage()">
+                                <option selected>Select Language</option>
+                                <option value="English">English</option>
+                                <option value="Hindi">Hindi</option>
+                                <option value="Tamil">Tamil</option>
+                            </select>
+                        </li>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <nav class="navbar-header navbar-expand-md navbar-light bg-light">
+        <div class="container-fluid d-flex justify-content-center justify-content-between">
+            <img src="./assets/logo.png" alt="logo" style="width: 150px; height: 40px;">
+            <div class="navbar-item">
+                <div class="search-container"> 
+                    <select>
+                        <option value="all">All Categories</option>
+                        <option value="electronics">Electronics</option>
+                        <option value="fashion">Fashion</option>
+                        <option value="home">Home</option> <!-- Add more categories as needed -->
+                    </select>
+                    <input type="text" placeholder="Search...">
+                    <i class="bi bi-search"></i>
+                </div>
+            </div>
+            <div class="icons">
+                <!--icons-->
+                <i class="bi bi-person icon-size"></i>
+                <i class="bi bi-geo-alt icon-size"></i>
+                <i class="bi bi-shuffle icon-size"></i>
+                <i class="bi bi-suit-heart icon-size"></i>
+                <i class="bi bi-handbag icon-size"></i>
+            </div>
+        </div>
+    </nav>
+
+    <footer>
+        <div class="container">© 2024 All Rights Reserved. <span class="fw-bold">Powered By Esenceweb IT</span></div>
+    </footer>
+
+    <!-- TODO: MODULE_LAYOUT -->
+    <!-- Add scripts needed for bootstrap to work -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+    <!--Functional scripts-->
+    <script>
+        // Array of messages
+        const messages = ["Get Deliver your items Within 1 Hour", "Shop From Local & Near by Stores", "Free Shipping On Purchase Of Rs.200 Within 3 KM Distance"];
+        // Function to display a random message
+        function displayRandomMessage() {
+            // Get a random index
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            // Get the message element
+            const messageElement = document.getElementById("randomMessage");
+            // Set the random message
+            messageElement.innerText = messages[randomIndex];
+        }
+        // Call the function to display a message when the page loads
+        displayRandomMessage();
+
+        setInterval(displayRandomMessage, 2000)
+        </script>
+
+</body>
+
+</html>
